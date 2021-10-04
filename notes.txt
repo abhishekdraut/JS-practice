@@ -1,0 +1,12 @@
+points to remember fast:
+
+1)typeof.
+2)factory function .
+3)factory Function with Object.create()method.
+4)factory method with constructor function.[with the help of new keyword]
+5)call(), apply(), bind()
+6)Object.assign({},object)
+7)inheritance
+8)Objects.setPropertyOf/object.create
+9)Object.assign(object1,targeted object )
+10)Cyclic proto value error.
