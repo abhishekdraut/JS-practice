@@ -116,27 +116,38 @@
 
 // function greet(event){
 //     var child=document.querySelector('.child')
-    
-    
+
+
 
 
 // }
 // let child = document.querySelector('.child')
 // child.addEventListener('click',greet());
 
-let obj1={
-    name:"abhi",
-    age:21
+// let obj1={
+//     name:"abhi",
+//     age:21
 
 
-}
-let obj2={
-    address:"shivajinagr",
-    picode:422401
+
+// }
+// let obj2={
+//     address:"shivajinagr",
+//     picode:422401
 
 
-}
+// }
 
-Object.setPrototypeOf(obj2,obj1);
-console.log(obj2)
-console.log(obj2.age)
+// Object.setPrototypeOf(obj2,obj1);
+// console.log(obj2)
+// console.log(obj2.age)
+
+
+
+let abhi = (name, age) => ({
+    name,
+    age,
+   
+})
+let one = abhi("abhi", 21);
+console.log(one)
