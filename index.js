@@ -144,10 +144,47 @@
 
 
 
-let abhi = (name, age) => ({
-    name,
-    age,
+// let abhi = (name, age) => ({
+//     name,
+//     age,
+
+// })
+// let one = abhi("abhi", 21);
+// console.log(one)
+
+
+let child = document.querySelector('.child');
+let parent = child.parentNode;
+let grandparent = parent.parentNode;
+
+child.addEventListener('click', function (e) {
+
+        child.style.backgroundColor = "green"
+        console.log("child is clicked")
+        e.preventDefault();    
+    }
+
+)
+parent.addEventListener('click', function (e) {
+
+    parent.style.backgroundColor = "red"
+    console.log("parant is clicked")
+    
    
 })
-let one = abhi("abhi", 21);
-console.log(one)
+
+parent.addEventListener('click', function (e) {
+
+    parent.style.backgroundColor = "red"
+    console.log("parant is from another event handler ")
+
+
+})
+
+grandparent.addEventListener('click', function (e) {
+
+    parent.style.backgroundColor = "red"
+    console.log("grandparent is clicked")
+
+
+})
