@@ -114,10 +114,29 @@
 //     return(console.log(`${name}`))
 // });
 
-function greet(event){
-    console.log('greet:',"walha")
+// function greet(event){
+//     var child=document.querySelector('.child')
+    
+    
+
+
+// }
+// let child = document.querySelector('.child')
+// child.addEventListener('click',greet());
+
+let obj1={
+    name:"abhi",
+    age:21
 
 
 }
-let child = document.querySelector('.child')
-child.addEventListener('click',greet);
+let obj2={
+    address:"shivajinagr",
+    picode:422401
+
+
+}
+
+Object.setPrototypeOf(obj2,obj1);
+console.log(obj2)
+console.log(obj2.age)
