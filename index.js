@@ -152,39 +152,64 @@
 // let one = abhi("abhi", 21);
 // console.log(one)
 
+// =========================================================
+// Event listener and propogation
+// let child = document.querySelector('.child');
+// let parent = child.parentNode;
+// let grandparent = parent.parentNode;
 
-let child = document.querySelector('.child');
-let parent = child.parentNode;
-let grandparent = parent.parentNode;
+// child.addEventListener('click', function (e) {
+
+//         child.style.backgroundColor = "green"
+//         console.log("child is clicked")
+//         e.preventDefault();    
+//     }
+
+// )
+// parent.addEventListener('click', function (e) {
+
+//     if (parent.style.backgroundColor=="yellow"){
+//         parent.style.backgroundColor = "blue"
+//     }
+//     else{
+//         parent.style.backgroundColor = "green"
+//     }
+//     console.log("parant is clicked")
+    
+   
+// })
+
+
+
+// grandparent.addEventListener('click', function (e) {
+
+//     parent.style.backgroundColor = "red"
+//     console.log("grandparent is clicked")
+
+
+// })
+
+// =================================================
+
+
+let child= document.querySelector('.child')
+
+
+let parent=child.parentNode
+console.log(parent)
+parent.style.backgroundColor ="gold"
+
+
+
+
 
 child.addEventListener('click', function (e) {
 
-        child.style.backgroundColor = "green"
-        console.log("child is clicked")
-        e.preventDefault();    
+    if (parent.style.backgroundColor=="gold") {
+        
+        parent.style.backgroundColor ="green"
+        console.log("parent color is changed")
     }
-
-)
-parent.addEventListener('click', function (e) {
-
-    parent.style.backgroundColor = "red"
-    console.log("parant is clicked")
     
    
-})
-
-parent.addEventListener('click', function (e) {
-
-    parent.style.backgroundColor = "red"
-    console.log("parant is from another event handler ")
-
-
-})
-
-grandparent.addEventListener('click', function (e) {
-
-    parent.style.backgroundColor = "red"
-    console.log("grandparent is clicked")
-
-
 })
