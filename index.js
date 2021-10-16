@@ -175,8 +175,8 @@
 //         parent.style.backgroundColor = "green"
 //     }
 //     console.log("parant is clicked")
-    
-   
+
+
 // })
 
 
@@ -206,12 +206,12 @@
 // child.addEventListener('click', function (e) {
 
 //     if (parent.style.backgroundColor=="gold") {
-        
+
 //         parent.style.backgroundColor ="green"
 //         console.log("parent color is changed")
 //     }
-    
-   
+
+
 // })
 
 // let child= document.querySelector('.child');
@@ -244,7 +244,7 @@
 
 // allitems.forEach(function (each) {
 //     console.log(each)
-    
+
 // })
 
 // let child=document.querySelector('.child');
@@ -257,3 +257,16 @@
 //     newchild.classList.toggle('visible')
 //     console.log(newchild)
 // })
+
+
+
+// import React, { Component } from 'react';
+// import ReactDOM ,{component} from 'react-dom';
+
+
+
+// const rootElement = document.querySelector(".child");
+// console.log(rootElement)
+
+// const divElement = <div className="hello">Hello World</div>;
+// ReactDOM.render(divElement, rootElement);
