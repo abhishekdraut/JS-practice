@@ -192,24 +192,68 @@
 // =================================================
 
 
-let child= document.querySelector('.child')
+// let child= document.querySelector('.child')
 
 
-let parent=child.parentNode
-console.log(parent)
-parent.style.backgroundColor ="gold"
+// let parent=child.parentNode
+// console.log(parent)
+// parent.style.backgroundColor ="gold"
 
 
 
 
 
-child.addEventListener('click', function (e) {
+// child.addEventListener('click', function (e) {
 
-    if (parent.style.backgroundColor=="gold") {
+//     if (parent.style.backgroundColor=="gold") {
         
-        parent.style.backgroundColor ="green"
-        console.log("parent color is changed")
-    }
+//         parent.style.backgroundColor ="green"
+//         console.log("parent color is changed")
+//     }
     
    
+// })
+
+// let child= document.querySelector('.child');
+// console.log(child.classList)
+// child.classList.toggle('child')
+
+
+// let child=document.querySelector('.child');
+// console.log(child.classList)
+// let parent=child.parentNode;
+// console.log(parent)
+
+
+// child.addEventListener('click', function (e) {
+
+//         console.log("child is clicked") 
+//         console.log(e.target)   
+// })
+
+// ()=> {
+
+// cosoe.log('child is clicked')
+
+
+// }
+// void(0)
+
+// let allitems=document.querySelectorAll('.box');
+// console.log(allitems)
+
+// allitems.forEach(function (each) {
+//     console.log(each)
+    
+// })
+
+let child=document.querySelector('.child');
+console.log(child)
+
+
+child.addEventListener('click',function (e) {
+    let newchild=document.querySelector(".new_child");
+    newchild.classList.toggle('not_visible')
+    newchild.classList.toggle('visible')
+    console.log(newchild)
 })

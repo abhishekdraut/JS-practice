@@ -1,18 +1,28 @@
 <html>
+  <head>
+    <link rel="stylesheet" href="index.css" />
+  </head>
 
-<head>
-  <link rel="stylesheet" href="index.css" />
-</head>
+  <body>
+    <div class="box grandparent">
+      grandparent
+      <div class="box parent">
+        parent
+        <div
+          class="box child"
+          data-id="1"
+          data-new-test="test1"
+          title="This is item 1"
+          id="item-1"
+        >
+          child
+          <div class="new_child not_visible">
+            newchild
+          </div>
 
-<body>
-  <div class="box grandparent">
-    grandparent
-    <div class="box parent">
-      parent
-      <div class="box child">child</div>
+        </div>
+      </div>
     </div>
-  </div>
-  <script src="index.js"></script>
-</body>
-
+    <script src="index.js"></script>
+  </body>
 </html>
