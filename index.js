@@ -247,13 +247,13 @@
     
 // })
 
-let child=document.querySelector('.child');
-console.log(child)
+// let child=document.querySelector('.child');
+// console.log(child)
 
 
-child.addEventListener('click',function (e) {
-    let newchild=document.querySelector(".new_child");
-    newchild.classList.toggle('not_visible')
-    newchild.classList.toggle('visible')
-    console.log(newchild)
-})
+// child.addEventListener('click',function (e) {
+//     let newchild=document.querySelector(".new_child");
+//     newchild.classList.toggle('not_visible')
+//     newchild.classList.toggle('visible')
+//     console.log(newchild)
+// })
