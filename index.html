@@ -36,26 +36,19 @@
     //   </div>
     // )
 
-
+    
     // const divelel=React.createElement("div",{
     //  className: "Hello_Jim" ,
     //  id: "one"
     // },"Hello jim My name is Paw","hello this is Abhishek");
 
-    const UserName=(para)=><div className="username">{para.children}</div>
-
+    
+      const divElement = <div class="newdiv element" id="one">
+        Abhishek Dipka Raut
+        </div>
     
 
-    const divElement = (
-      
-        <div className="container">
-        <UserName>Vivek Agarwal</UserName>
-        <UserName children="John Doe" ></UserName>
-        <UserName>Abhishek Ruta</UserName>
-        </div>
-      
-    )
-
+    
 
 
     ReactDOM.render(divElement, rootElement);
