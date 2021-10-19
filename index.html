@@ -25,30 +25,32 @@
   <script type="text/babel">
     // Declarative: just telling react what we need
     const rootElement = document.querySelector(".child");
-    // const className = 'hello';
-    // const children = 'Hello World';
-    // const prop={className, children};
+    const className = 'hello';
+    const children = 'Hello World';
+    const prop={className, children};
 
 
-    // const divElement = (
-    //   <div {...prop} className="new_class_name">
-    //     <strong >{prop.children}</strong>
-    //   </div>
-    // )
+    const divElement = (
+      <div {...prop}>
+        <strong >{prop.children}</strong>
+      </div>
+    )
 
-    
+  //  ============this is how CreateElement Works under the hood if you directly use jsx =================
+
     // const divelel=React.createElement("div",{
     //  className: "Hello_Jim" ,
     //  id: "one"
     // },"Hello jim My name is Paw","hello this is Abhishek");
 
-    
-      const divElement = <div class="newdiv element" id="one">
-        Abhishek Dipka Raut
-        </div>
+  // =========================Reusable Function=========
+  //   let UserName=(child)=> <div class="newClass_reusableFunction">{child.class}
+  //     </div>
     
 
-    
+  //  const divElement = (
+  //    <UserName >Kishor Naykodi</UserName>
+  //  )
 
 
     ReactDOM.render(divElement, rootElement);
