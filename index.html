@@ -56,7 +56,7 @@
     let adress = "shivajinagr";
     let fevSubject = "javascript";
     let name = "Abhishek Dipak Raut";
-    let printing=()=>{
+    let printing = () => {
       return (`Hello from ${name}`)
     }
 
@@ -65,7 +65,7 @@
 
     // const UserName = ({ className, children, ...rest }) => {
     //   console.log(className);
-      
+
     //   console.log(rest);
     //   return (
     //     <div className={`${className}`} {...rest}>
@@ -82,20 +82,48 @@
     // );
 
     // ReactDOM.render(divElement, rootElement);
-   
-    const UserName =({className,children,...rest})=>{
 
-      console.log(rest)
-      return (<div className={className}>{children}</div>);
+    // const UserName =({className,children,...rest})=>{
 
+    //   console.log(rest)
+    //   return (<div className={className}>{children}</div>);
+
+    // }
+
+    // const divElement = (
+    //   <>
+    //   <UserName className={type} fevsubject={fevSubject} address={adress}>{name}</UserName>
+    //   </>
+    // );
+    function Box({ className = '', color, ...rest }) {
+
+      if (color =="") {
+        const colorClassName = `box--empty`;
+        
+        
+        return <div className={`box ${className} ${colorClassName}`} {...rest} />
+
+
+      }
+      else if(color != null) {
+        const colorClassName = `box--${color}`;
+        
+        return <div className={`box ${className} ${colorClassName}`} {...rest} />
+      }
+
+      // const colorClassName = color ? `box--${color}` : 'empty';
+      
     }
-    
+
     const divElement = (
       <>
-      <UserName className={type} fevsubject={fevSubject} address={adress}>{name}</UserName>
+        <Box color="yellow" style={{ border: '3px dashed' }}>yellow box</Box>
+        <Box color="blue" style={{ border: '3px solid' }}>blue box</Box>
+        <Box color="" style={{ border: '3px dotted', fontStyle: 'italic' }}>sky box</Box>
       </>
     );
     ReactDOM.render(divElement, rootElement);
   </script>
- </body>
+</body>
+
 </html>
