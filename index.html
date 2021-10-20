@@ -31,7 +31,8 @@
 
   // ===This is how we pass the properties +children to div block=========
     const divElement = (
-      <div {...prop}>
+      /* called the destructuring of the properties. */
+      <div {...prop}> 
         <strong >{prop.children}</strong>
       </div>
     )
