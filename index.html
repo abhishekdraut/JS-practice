@@ -5,8 +5,6 @@
   <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
-
-
 </head>
 
 <body>
@@ -16,46 +14,67 @@
       parent
       <div class="box child" data-id="1" data-new-test="test1" title="This is item 1" id="item-1">
         child
-
-
       </div>
     </div>
   </div>
 
   <script type="text/babel">
     // Declarative: just telling react what we need
-    const rootElement = document.querySelector(".child");
-    const className = 'hello';
-    const children = 'Hello World';
-    const prop={className, children};
+      const rootElement = document.querySelector(".child");
+      // const className = 'hello';
+      // const children = 'Hello World';
+      // const prop={className, children};
 
-  // ===This is how we pass the properties +children to div block=========
-    const divElement = (
-      /* called the destructuring of the properties. */
-      <div {...prop}> 
-        <strong >{prop.children}</strong>
-      </div>
-    )
+      // ===This is how we pass the properties +children to div block=========
+      // const divElement = (
+      //   /* called the destructuring of the properties. */
+      //   <div {...prop}>
+      //     <strong >{prop.children}</strong>
+      //   </div>
+      // )
 
-  //  ============this is how CreateElement Works under the hood if you directly use jsx =================
+      //  ============this is how CreateElement Works under the hood if you directly use jsx =================
 
-    // const divelel=React.createElement("div",{
-    //  className: "Hello_Jim" ,
-    //  id: "one"
-    // },"Hello jim My name is Paw","hello this is Abhishek");
+      // const divelel=React.createElement("div",{
+      //  className: "Hello_Jim" ,
+      //  id: "one"
+      // },"Hello jim My name is Paw","hello this is Abhishek");
 
-  // =========================Reusable Function=========
-  //   let UserName=(child)=> <div class="newClass_reusableFunction">{child.class}
-  //     </div>
-    
+      // =========================Reusable Function=========
+      //   let UserName=(child)=> <div class="newClass_reusableFunction">{child.class}
+      //     </div>
 
-  //  const divElement = (
-  //    <UserName >Kishor Naykodi</UserName>
-  //  )
+      //  const divElement = (
+      //    <UserName >Kishor Naykodi</UserName>
+      //  )
 
+      //================== supose this data coming form backend
+      let type = "user";
+      let adress = "shivajinagr";
+      let fevSubject = "javascript";
+      let name = "Abhishek Dipak Raut";
+      
+      //============================
 
-    ReactDOM.render(divElement, rootElement);
-  </script>
+      const UserName = ({ className, children, ...rest }) => {
+        console.log(className);
+        console.log(rest);
+        return (
+          <div className={`${className}`} {...rest}>
+            {children}
+          </div>
+        );
+      };
+      let divElement = (
+        <>
+          <UserName className={type} style={{ color:"red", fontWeight:"bold" }} address={adress} fevsubject={fevSubject} >
+            {name}
+          </UserName>
+        </>
+      );
+
+      ReactDOM.render(divElement, rootElement);
+    </script>
 </body>
 
 </html>
