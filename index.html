@@ -136,7 +136,7 @@
     const aurther = document.querySelector(".aurther");
     console.log(`${header.className}`);
     const root=[header,details,aurther];
-    const i=0;
+    
     
     
     // ==================================
@@ -152,17 +152,21 @@
     const divelementdetails=<Updator className={details.className}>{newdetails}</Updator>
     const divelementaurther=  <Updator className={aurther.className}>{newaurther}</Updator>  
     
-    ReactDOM.render(divElementheader,header);
-    ReactDOM.render(divelementdetails,details);
-    ReactDOM.render(divelementaurther,aurther)
+    // ReactDOM.render(divElementheader,header);
+    // ReactDOM.render(divelementdetails,details);
+    // ReactDOM.render(divelementaurther,aurther)
 
 
-  //  const divElements=[divElementheader,divelementdetails,divelementaurther];
-   
-  //  divElements.forEach(function(element){
-  //    ReactDOM.render(element,root[i])
-  //    i++
-  //  })
+   const divElements=[divElementheader,divelementdetails,divelementaurther];
+   var i=0;
+   divElements.forEach(function(element){
+     ReactDOM.render(element,root[i]);
+     console.log(element);
+     console.log(i);
+     i++;
+     
+     
+   })
 
     
    
