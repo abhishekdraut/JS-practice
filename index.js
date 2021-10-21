@@ -270,5 +270,6 @@
 
 // const divElement = <div className="hello">Hello World</div>;
 // ReactDOM.render(divElement, rootElement);
-
-
+import React from 'react'
+console.log("hello")
+React.Dom.render(div)
