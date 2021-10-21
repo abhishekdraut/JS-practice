@@ -127,46 +127,48 @@
     //   </>
     // );
     // ReactDOM.render(divElement, rootElement);
-    const newheader = "New Header";
-    const newdetails = "New Details";
-    const newaurther = "New Aurther";
-    // root element================
-    const header = document.querySelector(".header");
-    const details = document.querySelector(".details");
-    const aurther = document.querySelector(".aurther");
-    console.log(`${header.className}`);
-    const root=[header,details,aurther];
+
+
+
+    // ==============================
+    // const newheader = "New Header";
+    // const newdetails = "New Details";
+    // const newaurther = "New Aurther";
+    // // root element================
+    // const header = document.querySelector(".header");
+    // const details = document.querySelector(".details");
+    // const aurther = document.querySelector(".aurther");
+    // console.log(`${header.className}`);
+    // const root=[header,details,aurther];
     
     
     
     // ==================================
    
-    const Updator = ({className,children, ...rest}) => {
-      console.log(className);
+  //   const Updator = ({className,children, ...rest}) => {
+  //     console.log(className);
 
-      return (<div className={className}>{children}</div>);
-    };
+  //     return (<div className={className}>{children}</div>);
+  //   };
 
     
-    const divElementheader =<Updator className={header.className}>{newheader}</Updator>
-    const divelementdetails=<Updator className={details.className}>{newdetails}</Updator>
-    const divelementaurther=  <Updator className={aurther.className}>{newaurther}</Updator>  
+  //   const divElementheader =<Updator className={header.className}>{newheader}</Updator>
+  //   const divelementdetails=<Updator className={details.className}>{newdetails}</Updator>
+  //   const divelementaurther=  <Updator className={aurther.className}>{newaurther}</Updator>  
     
-    // ReactDOM.render(divElementheader,header);
-    // ReactDOM.render(divelementdetails,details);
-    // ReactDOM.render(divelementaurther,aurther)
+  //   // ReactDOM.render(divElementheader,header);
+  //   // ReactDOM.render(divelementdetails,details);
+  //   // ReactDOM.render(divelementaurther,aurther)
 
 
-   const divElements=[divElementheader,divelementdetails,divelementaurther];
-   var i=0;
-   divElements.forEach(function(element){
-     ReactDOM.render(element,root[i]);
-     console.log(element);
-     console.log(i);
-     i++;
+  //  const divElements=[divElementheader,divelementdetails,divelementaurther];
+  //  var i=0;
+  //  divElements.forEach(function(element){
+  //    ReactDOM.render(element,root[i]);
+  //    i++;
      
      
-   })
+  //  })
 
     
    
