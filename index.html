@@ -10,22 +10,18 @@
 <body>
   <div class="card">
     <div class="card_inner">
-      <img
-        class="card_image"
+      <img class="card_image"
         src="https://imgv2-1-f.scribdassets.com/img/audiobook_square_badge/510417754/396x396/e1986f8af6/1632395555?v=1"
-        alt=""
-      />
+        alt="" />
     </div>
     <div class="card_details">
       <div>
-        <a href="" class="card_details header"
-          >The Afganistan paper:Secret history of war</a
-        >
+        <a href="" class="card_details header">The Afganistan paper:Secret history of war</a>
       </div>
       <div class="card_details details">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero
-        deleniti incidunt rem. Voluptate, tempore quos, suscipit
-        temporibus autem sapiente.
+        deleniti incidunt rem. Voluptate, tempore quos, suscipit temporibus
+        autem sapiente.
       </div>
       <div class="card_details aurther">Aurther Name</div>
     </div>
@@ -33,7 +29,7 @@
 
   <script type="text/babel">
     // Declarative: just telling react what we need
-    
+
     // const className = 'hello';
     // const children = 'Hello World';
     // const prop={className, children};
@@ -62,17 +58,14 @@
     //  )
     // ======================================================
 
-
-
     //================== supose this data coming form backend
-    let type = "user";
-    let adress = "shivajinagr";
-    let fevSubject = "javascript";
-    let name = "Abhishek Dipak Raut";
-    let printing = () => {
-      return (`Hello from ${name}`)
-    }
-
+    // let type = "user";
+    // let adress = "shivajinagr";
+    // let fevSubject = "javascript";
+    // let name = "Abhishek Dipak Raut";
+    // let printing = () => {
+    //   return (`Hello from ${name}`)
+    // }
 
     //============================
 
@@ -108,34 +101,73 @@
     //   <UserName className={type} fevsubject={fevSubject} address={adress}>{name}</UserName>
     //   </>
     // );
-    function Box({  color, ...rest }) {
+    // function Box({  color, ...rest }) {
 
-      if (color =="") {
-        const colorClassName = `box--empty`;
-        
-        
-        return <div className={`box ${colorClassName}`} {...rest} />
+    //   if (color =="") {
+    //     const colorClassName = `box--empty`;
+
+    //     return <div className={`box ${colorClassName}`} {...rest} />
+
+    //   }
+    //   else if(color != null) {
+    //     const colorClassName = `box--${color}`;
+
+    //     return <div className={`box ${colorClassName}`} {...rest} />
+    //   }
+
+    //   // const colorClassName = color ? `box--${color}` : 'empty';
+
+    // }
+
+    // const divElement = (
+    //   <>
+    //     <Box color="yellow" style={{ border: '3px dashed' }}>yellow box</Box>
+    //     <Box color="blue" style={{ border: '3px solid' }}>blue box</Box>
+    //     <Box color="" style={{ border: '3px dotted', fontStyle: 'italic' }}>sky box</Box>
+    //   </>
+    // );
+    // ReactDOM.render(divElement, rootElement);
+    const newheader = "New Header";
+    const newdetails = "New Details";
+    const newaurther = "New Aurther";
+    // root element================
+    const header = document.querySelector(".header");
+    const details = document.querySelector(".details");
+    const aurther = document.querySelector(".aurther");
+    console.log(`${header.className}`);
+    const root=[header,details,aurther];
+    const i=0;
+    
+    
+    // ==================================
+   
+    const Updator = ({className,children, ...rest}) => {
+      console.log(className);
+
+      return (<div className={className}>{children}</div>);
+    };
+
+    
+    const divElementheader =<Updator className={header.className}>{newheader}</Updator>
+    const divelementdetails=<Updator className={details.className}>{newdetails}</Updator>
+    const divelementaurther=  <Updator className={aurther.className}>{newaurther}</Updator>  
+    
+    ReactDOM.render(divElementheader,header);
+    ReactDOM.render(divelementdetails,details);
+    ReactDOM.render(divelementaurther,aurther)
 
 
-      }
-      else if(color != null) {
-        const colorClassName = `box--${color}`;
-        
-        return <div className={`box ${colorClassName}`} {...rest} />
-      }
+  //  const divElements=[divElementheader,divelementdetails,divelementaurther];
+   
+  //  divElements.forEach(function(element){
+  //    ReactDOM.render(element,root[i])
+  //    i++
+  //  })
 
-      // const colorClassName = color ? `box--${color}` : 'empty';
-      
-    }
-
-    const divElement = (
-      <>
-        <Box color="yellow" style={{ border: '3px dashed' }}>yellow box</Box>
-        <Box color="blue" style={{ border: '3px solid' }}>blue box</Box>
-        <Box color="" style={{ border: '3px dotted', fontStyle: 'italic' }}>sky box</Box>
-      </>
-    );
-    ReactDOM.render(divElement, rootElement);
+    
+   
+    
+    
   </script>
 </body>
 
