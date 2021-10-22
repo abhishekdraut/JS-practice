@@ -173,13 +173,11 @@
 
     const rootElement = document.querySelector('.root');
 
-    var val=30
     
-    let fun=(val)=>val
     
     function Greet() {
-      const [count, dispatch] = React.useState(fun(val));
-     console.log(dispatch);
+      const [count, dispatch] = React.useState(0);
+     
 
 
       return (
