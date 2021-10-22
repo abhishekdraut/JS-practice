@@ -129,8 +129,6 @@
     // );
     // ReactDOM.render(divElement, rootElement);
 
-
-
     // ==============================
     // const newheader = "New Header";
     // const newdetails = "New Details";
@@ -142,8 +140,6 @@
     // console.log(`${header.className}`);
     // const root=[header,details,aurther];
 
-
-
     // ==================================
 
     //   const Updator = ({className,children, ...rest}) => {
@@ -152,15 +148,13 @@
     //     return (<div className={className}>{children}</div>);
     //   };
 
-
     //   const divElementheader =<Updator className={header.className}>{newheader}</Updator>
     //   const divelementdetails=<Updator className={details.className}>{newdetails}</Updator>
-    //   const divelementaurther=  <Updator className={aurther.className}>{newaurther}</Updator>  
+    //   const divelementaurther=  <Updator className={aurther.className}>{newaurther}</Updator>
 
     //   // ReactDOM.render(divElementheader,header);
     //   // ReactDOM.render(divelementdetails,details);
     //   // ReactDOM.render(divelementaurther,aurther)
-
 
     //  const divElements=[divElementheader,divelementdetails,divelementaurther];
     //  var i=0;
@@ -168,41 +162,26 @@
     //    ReactDOM.render(element,root[i]);
     //    i++;
 
-
     //  })
 
-    const rootElement = document.querySelector('.root');
+    const rootElement = document.querySelector(".root");
 
-    
-    
     function Greet() {
       const [count, dispatch] = React.useState(0);
-     
-
 
       return (
-        <>
-        <button onClick={()=>dispatch(count+1)}>
-          {count}
-
-        </button>
+      
+          <button className="btn" onClick={(e) =>{
+            console.log(e.target);
+            dispatch(count + 1)
+          } }>{count}</button>
         
-        </>
-      )
+      );
     }
 
-    const App = (
-      <Greet />
-    );
+    const App = <Greet />;
 
     ReactDOM.render(App, rootElement);
-    
-  
-
-    
-
-
-
   </script>
 </body>
 
