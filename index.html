@@ -171,53 +171,35 @@
 
     //  })
 
-    // const rootElement = document.querySelector('.root');
+    const rootElement = document.querySelector('.root');
 
-    // function Greet() {
-    //   const [count, record] = React.useState(0);
-    //  console.log(record)
+    var val=30
+    
+    let fun=(val)=>val
+    
+    function Greet() {
+      const [count, dispatch] = React.useState(fun(val));
+     console.log(dispatch);
 
 
-    //   return (
-    //     <>
-    //     <button onClick={()=>record(count+1)}>
-    //       click me
+      return (
+        <>
+        <button onClick={()=>dispatch(count+1)}>
+          {count}
 
-    //     </button>
-    //     <div>{count}</div>
-    //     </>
-    //   )
-    // }
-
-    // const App = (
-    //   <Greet />
-    // );
-
-    // ReactDOM.render(App, rootElement);
-    // function useState(num) {
-    //   let count = num;
-    //   let setCount = function () {
-    //     console.log(`setting the count: ${count}`);
-    //   }
-
-    //   return [count, setCount]
-    // }
-
-    let useState=(num)=>{
-      let name="abhishek";
-      let count=num;
-      let setCount=()=>{
-        console.log(`setting the count:${count}`);
-      }
-      
-      return[count,setCount,name]
+        </button>
+        
+        </>
+      )
     }
+
+    const App = (
+      <Greet />
+    );
+
+    ReactDOM.render(App, rootElement);
     
-    let [count,...rest] = useState(30);
-    let fun=rest[0];
-    fun()
-    
-    console.log(rest)
+  
 
     
 
