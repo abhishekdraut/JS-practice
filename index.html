@@ -8,7 +8,15 @@
 </head>
 
 <body>
-  <div class="root"></div>
+  <div class="root">
+  
+  <div class="container1">
+    <div class="children"></div>
+  </div>
+  
+  
+  
+  </div>
   <!-- <div class="card">
     <div class="card_inner">
       <img class="card_image"
@@ -164,24 +172,56 @@
 
     //  })
 
-    const rootElement = document.querySelector(".root");
+    // const rootElement = document.querySelector(".root");
 
-    function Greet() {
-      const [count, dispatch] = React.useState(0);
+    // function Greet() {
+    //   const [count, dispatch] = React.useState(0);
 
-      return (
-      
-          <button className="btn" onClick={(e) =>{
-            console.log(e.target);
-            dispatch(count + 1)
-          } }>{count}</button>
-        
-      );
-    }
+    //   return (
 
-    const App = <Greet />;
+    //       <button className="btn" onClick={(e) =>{
+    //         console.log(e.target);
+    //         dispatch(count + 1)
+    //       } }>{count}</button>
 
-    ReactDOM.render(App, rootElement);
+    //   );
+    // }
+
+    // const App = <Greet />;
+
+    // ReactDOM.render(App, rootElement);
+    // let rootElement = document.querySelector(".root");
+    // let ToDoList = () => {
+    //   let obj = {
+    //     name: "abhishek",
+    //     age: 21,
+    //     marks: 80,
+    //     children: "abhishek"
+    //   }
+
+    //   const [data, setData] = React.useState(obj);
+
+    //   return (
+    //     <>
+    //     <input type="button" value="+"  onClick={()=>setData({...data,marks:data.marks+1})}/>
+    //     <div {...data}></div>
+    //     </>
+    //   )
+
+    // }
+
+
+
+
+
+
+    // const App = (
+    //   <ToDoList />
+    // );
+
+    // ReactDOM.render(App, rootElement);
+
+
   </script>
 </body>
 

@@ -1,4 +1,4 @@
-.card_image {
+/* .card_image {
   max-height: 109px;
 }
 
@@ -30,4 +30,20 @@
 
 .aurther {
   color: rgba(0, 0, 0, 0.363);
+} */
+.container1{
+  
+  border: 1px solid red;
+  height:200px;
+  width:300px;
+
+}
+.children{
+  height:100px;
+  width:100px;
+  border: 1px solid rgb(109, 47, 255);
+  position: relative;
+  
+  
+
 }
