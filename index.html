@@ -179,39 +179,47 @@
     //   );
     // }
 
-    let rootElement = document.querySelector(".root");
 
-    let Name = ({ name, OnNameChange }) => {
+    const rootElement = document.querySelector('.root');
+    const loggedInContext = React.createContext();
 
+    function UserDisplay({loginState,age}) {
+      const loggedIn = React.useContext(loginState);
       return (
-        <>
-          <label for="name">Name Field</label>
-          <input name="name" type="text" value={name} onChange={OnNameChange}></input>
-        </>
-      )
-
-    }
-
-
-    let Greet = () => {
-      var setInitialState = () => "abhishek"
-      const [name, setname] = React.useState(setInitialState);
-
-      React.useEffect(() => { console.log('usestate', name); return (console.log('unmounted ', name)) }, [name]
-
-      )
-
-      return (
-        <>
-          <Name name={name} OnNameChange={(e) => setname(e.target.value)}> </Name>
-        </>
+        <div> User Display - is user loggedIn: {loggedIn.toString()}</div>
       )
     }
 
+    function UserGrade({loginState,age}) {
+      const loggedIn = React.useContext(loginState)
+      return (
+        <div> UserGrade - is user loggedIn: {loggedIn.toString()}</div>
+      )
+    }
 
-    let App = (
-      <Greet />
-    )
+    function UserLogin() {
+      const [loginState, setloginState] = React.useState(false);
+      const [age, setage] = React.useState(30);
+
+      return (
+        <div className="login-page">
+          <div className="login-page__toggle-section">
+            <button onClick={() => setloginState(loginState ? false : true)} >Toggle login state</button>
+            <button onClick={()=>setage(age+1)}>{age}</button>
+            <div> loginState: <strong>{loginState.toString()}</strong></div>
+          </div>
+          <div className="login-page__children-section" >
+            <loggedInContext.Provider value={loginState,age}>
+              <UserDisplay />
+              <UserGrade />
+            </loggedInContext.Provider>
+          </div>
+        </div>
+      );
+    }
+
+    const App = <UserLogin />;
+
     ReactDOM.render(App, rootElement);
   </script>
 </body>
