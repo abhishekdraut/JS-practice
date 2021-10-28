@@ -183,18 +183,22 @@
     const rootElement = document.querySelector('.root');
     const loggedInContext = React.createContext();
 
-    function UserDisplay({loginState,age}) {
-      const loggedIn = React.useContext(loginState);
+    function UserDisplay() {
+      const {loginState,age} = React.useContext(loggedInContext);
       return (
-        <div> User Display - is user loggedIn: {loggedIn.toString()}</div>
+        <div> User Display - is user loggedIn: {loginState.toString()}</div>
       )
     }
 
-    function UserGrade({loginState,age}) {
-      const loggedIn = React.useContext(loginState)
+    function UserGrade() {
+      const {loginState,age} = React.useContext(loggedInContext)
       return (
-        <div> UserGrade - is user loggedIn: {loggedIn.toString()}</div>
+        <div> UserGrade - is user loggedIn: {loginState.toString()}</div>
       )
+    }
+    let Age=()=>{
+      const{loginState,age} = React.useContext(loggedInContext)
+      return(<div> User Age is :{age}</div>)
     }
 
     function UserLogin() {
@@ -209,9 +213,10 @@
             <div> loginState: <strong>{loginState.toString()}</strong></div>
           </div>
           <div className="login-page__children-section" >
-            <loggedInContext.Provider value={loginState,age}>
+            <loggedInContext.Provider value={{loginState,age}}>
               <UserDisplay />
               <UserGrade />
+              <Age/>
             </loggedInContext.Provider>
           </div>
         </div>
