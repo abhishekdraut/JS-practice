@@ -1,0 +1,46 @@
+{
+	"folders": [
+		{
+			"path": "..\\MS CODE"
+		},
+		{
+			"path": "..\\MS CODE\\django\\proj_9"
+		},
+		{
+			"path": "..\\Hackerrank"
+		},
+		{
+			"path": "..\\Project"
+		},
+		{
+			"path": "..\\Project_redit\\reddit"
+		},
+		{
+			"path": "..\\Travel\\travello"
+		},
+		{
+			"path": "..\\amazon\\amazon"
+		},
+		{
+			"path": "..\\Django Rest\\proj_rest"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\Portfolio  Project"
+		},
+		{
+			"path": "..\\Resourses Scribid"
+		},
+		{
+			"path": "..\\Scribid Project"
+		},
+		{
+			"path": "..\\React Project"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Js"
+	}
+}
