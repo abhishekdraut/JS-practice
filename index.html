@@ -9,228 +9,43 @@
 
 <body>
   <div class="root"></div>
-  <!-- <div class="card">
-    <div class="card_inner">
-      <img class="card_image"
-        src="https://imgv2-1-f.scribdassets.com/img/audiobook_square_badge/510417754/396x396/e1986f8af6/1632395555?v=1"
-        alt="" />
-    </div>
-    <div class="card_details">
-      <div>
-        <a href="" class="card_details header">The Afganistan paper:Secret history of war</a>
-      </div>
-      <div class="card_details details">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero
-        deleniti incidunt rem. Voluptate, tempore quos, suscipit temporibus
-        autem sapiente.
-      </div>
-      <div class="card_details aurther">Aurther Name</div>
-    </div>
-  </div> -->
-
   <script type="text/babel">
-    // Declarative: just telling react what we need
-
-    // const className = 'hello';
-    // const children = 'Hello World';
-    // const prop={className, children};
-
-    // ===This is how we pass the properties +children to div block=========
-    // const divElement = (
-    //   /* called the destructuring of the properties. */
-    //   <div {...prop}>
-    //     <strong >{prop.children}</strong>
-    //   </div>
-    // )
-
-    //  ============this is how CreateElement Works under the hood if you directly use jsx =================
-
-    // const divelel=React.createElement("div",{
-    //  className: "Hello_Jim" ,
-    //  id: "one"
-    // },"Hello jim My name is Paw","hello this is Abhishek");
-
-    // =========================Reusable Function=========
-    //   let UserName=(child)=> <div class="newClass_reusableFunction">{child.class}
-    //     </div>
-
-    //  const divElement = (
-    //    <UserName >Kishor Naykodi</UserName>
-    //  )
-    // ======================================================
-
-    //================== supose this data coming form backend
-    // let type = "user";
-    // let adress = "shivajinagr";
-    // let fevSubject = "javascript";
-    // let name = "Abhishek Dipak Raut";
-    // let printing = () => {
-    //   return (`Hello from ${name}`)
-    // }
-
-    //============================
-
-    // const UserName = ({ className, children, ...rest }) => {
-    //   console.log(className);
-
-    //   console.log(rest);
-    //   return (
-    //     <div className={`${className}`} {...rest}>
-    //       {printing()}
-    //     </div>
-    //   );
-    // };
-    // let divElement = (
-    //   <>
-    //     <UserName className={type} style={{ color:"red", fontWeight:"bold" }} address={adress} fevsubject={fevSubject} >
-    //       {name}
-    //     </UserName>
-    //   </>
-    // );
-
-    // ReactDOM.render(divElement, rootElement);
-
-    // const UserName =({className,children,...rest})=>{
-
-    //   console.log(rest)
-    //   return (<div className={className}>{children}</div>);
-
-    // }
-
-    // const divElement = (
-    //   <>
-    //   <UserName className={type} fevsubject={fevSubject} address={adress}>{name}</UserName>
-    //   </>
-    // );
-    // function Box({  color, ...rest }) {
-
-    //   if (color =="") {
-    //     const colorClassName = `box--empty`;
-
-    //     return <div className={`box ${colorClassName}`} {...rest} />
-
-    //   }
-    //   else if(color != null) {
-    //     const colorClassName = `box--${color}`;
-
-    //     return <div className={`box ${colorClassName}`} {...rest} />
-    //   }
-
-    //   // const colorClassName = color ? `box--${color}` : 'empty';
-
-    // }
-
-    // const divElement = (
-    //   <>
-    //     <Box color="yellow" style={{ border: '3px dashed' }}>yellow box</Box>
-    //     <Box color="blue" style={{ border: '3px solid' }}>blue box</Box>
-    //     <Box color="" style={{ border: '3px dotted', fontStyle: 'italic' }}>sky box</Box>
-    //   </>
-    // );
-    // ReactDOM.render(divElement, rootElement);
-
-    // ==============================
-    // const newheader = "New Header";
-    // const newdetails = "New Details";
-    // const newaurther = "New Aurther";
-    // // root element================
-    // const header = document.querySelector(".header");
-    // const details = document.querySelector(".details");
-    // const aurther = document.querySelector(".aurther");
-    // console.log(`${header.className}`);
-    // const root=[header,details,aurther];
-
-    // ==================================
-
-    //   const Updator = ({className,children, ...rest}) => {
-    //     console.log(className);
-
-    //     return (<div className={className}>{children}</div>);
-    //   };
-
-    //   const divElementheader =<Updator className={header.className}>{newheader}</Updator>
-    //   const divelementdetails=<Updator className={details.className}>{newdetails}</Updator>
-    //   const divelementaurther=  <Updator className={aurther.className}>{newaurther}</Updator>
-
-    //   // ReactDOM.render(divElementheader,header);
-    //   // ReactDOM.render(divelementdetails,details);
-    //   // ReactDOM.render(divelementaurther,aurther)
-
-    //  const divElements=[divElementheader,divelementdetails,divelementaurther];
-    //  var i=0;
-    //  divElements.forEach(function(element){
-    //    ReactDOM.render(element,root[i]);
-    //    i++;
-
-    //  })
-
-    // const rootElement = document.querySelector(".root");
-
-    // function Greet() {
-    //   const [count, dispatch] = React.useState(0);
-
-    //   return (
-
-    //       <button className="btn" onClick={(e) =>{
-    //         console.log(e.target);
-    //         dispatch(count + 1)
-    //       } }>{count}</button>
-
-    //   );
-    // }
-
-    const rootElement = document.querySelector('.root');
-// ======================================================================================
-// Example with two states=====================================================
-
+    const rootElement = document.querySelector(".root");
+    const AgeContext = React.createContext();
     
-    const loggedInContext = React.createContext();
 
-    function UserDisplay() {
-      const {loginState,age} = React.useContext(loggedInContext);
+    let PrintAge = () => {
+      const {age1,age2} = React.useContext(AgeContext);
+      
       return (
-        <div> User Display - is user loggedIn: {loginState.toString()}</div>
+        <>
+        <div className="msg"> Piyush's age : {age1}</div>
+        <div className="msg">Abhishek's age: {age2}</div>
+       </>
       )
     }
 
-    function UserGrade() {
-      const {loginState,age} = React.useContext(loggedInContext)
-      return (
-        <div> UserGrade - is user loggedIn: {loginState.toString()}</div>
-      )
-    }
-    let Age=()=>{
-      const{loginState,age} = React.useContext(loggedInContext)
-      return(<div> User Age is :{age}</div>)
-    }
 
-    function UserLogin() {
-      const [loginState, setloginState] = React.useState(false);
-      const [age, setage] = React.useState(30);
+
+    let Greet = () => {
+      const [age1, setAge1] = React.useState(0);
+      const [age2,setAge2]= React.useState(0);
 
       return (
-        <div className="login-page">
-          <div className="login-page__toggle-section">
-            <button onClick={() => setloginState(loginState ? false : true)} >Toggle login state</button>
-            <button onClick={()=>setage(age+1)}>{age}</button>
-            <div> loginState: <strong>{loginState.toString()}</strong></div>
-          </div>
-          <div className="login-page__children-section" >
-            <loggedInContext.Provider value={{loginState,age}}>
-              <UserDisplay />
-              <UserGrade />
-              <Age/>
-            </loggedInContext.Provider>
-          </div>
-        </div>
+        <>
+          <button onClick={() => setAge1(age1 + 1)} >Piyush's Age+</button>
+          <button onClick={() => setAge2(age2 + 1)} >Abhishek's Age+</button>
+          <AgeContext.Provider value={{age1,age2}}>
+            <PrintAge />
+
+          </AgeContext.Provider>
+        </>
       );
-    }
+    };
 
-    const App = <UserLogin />;
+    const divElement = <Greet />;
 
-    ReactDOM.render(App, rootElement);
-
-// ===========================================================================`    
+    ReactDOM.render(divElement, rootElement);
   </script>
 </body>
 
