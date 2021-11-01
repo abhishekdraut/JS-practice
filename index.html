@@ -1,91 +1,126 @@
 <html>
+  <head>
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+  </head>
 
-<head>
-  <link rel="stylesheet" href="index.css" />
-  <script src="https://unpkg.com/react@16.12.0/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@16.12.0/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
-</head>
+  <body>
+    <div class="root"></div>
+    <script type="text/babel">
+      const rootElement = document.querySelector(".root");
+      // ======================================================================================================================
+      //                                         Use of Create Context. with one setter function
+      // ======================================================================================================================
+      // const AgeContext = React.createContext();
+      // let PrintAge = () => {
+      //   const { age1, age2 ,setAge2} = React.useContext(AgeContext);
+      //   React.useEffect(() => {
+      //     console.log("useeffect worsk only at piyush's age is incremented")
+      //   })
 
-<body>
-  <div class="root"></div>
-  <script type="text/babel">
-    const rootElement = document.querySelector(".root");
-    // ======================================================================================================================
-    //                                         Use of Create Context. with one setter function
-    // ======================================================================================================================    
-    // const AgeContext = React.createContext();
-    // let PrintAge = () => {
-    //   const { age1, age2 ,setAge2} = React.useContext(AgeContext);
-    //   React.useEffect(() => {
-    //     console.log("useeffect worsk only at piyush's age is incremented")
-    //   })
+      //   return (
+      //     <>
+      //       <button onClick={() => setAge2(age2 + 1)}>Abhishek's Age+</button>
+      //       <div className="msg"> Piyush's age : {age1}</div>
+      //       <div className="msg">Abhishek's age: {age2}</div>
+      //     </>
+      //   );
+      // };
+
+      // let Greet = () => {
+
+      //   let initialValue=()=>{
+      //     let value=0
+      //     return(value)
+      //   }
+      //   const [age1, setAge1] = React.useState(initialValue);
+      //   const [age2, setAge2] = React.useState(initialValue);
+
+      //   return (
+      //     <>
+      //       <button onClick={() => setAge1(age1 + 1)}>Piyush's Age+</button>
+
+      //       <AgeContext.Provider value={{ age1, age2,setAge2 }}>
+      //         <PrintAge />
+      //       </AgeContext.Provider>
+      //     </>
+      //   );
+      // };
+      // const divElement = <Greet />;
+      // ReactDOM.render(divElement, rootElement);
+
+      // =======================================================================================================================
+      //                     Toggeling true false form function.
+      // =======================================================================================================================
+      // const button = false;
+
+      // let togleState = ({state,sateState}) => {
+      //   return (
+      //     sateState(state ? false : true)
+      //   )
+      // }
+      // let ChangeState = () => {
+      //   const [state, sateState] = React.useState(button);
+
+      //   return (
+      //     <button onClick={() => togleState({state,sateState})}>{state.toString()}</button>
+
+      //   )
+      // }
+      // let Greet = () => {
+      //   return (
+      //     <ChangeState />
+      //   )
+
+      // }
+      // const divElement = <Greet />;
+      // ReactDOM.render(divElement, rootElement);
+
+      // ============================================================================================
+      // Using Context but passing provider as a defferant function
+      // ============================================================================================
+
+      const HeaderContext = React.createContext();
+
+      let HeaderContextProvider = (props) => {
+        const [age, setage] = React.useState(1);
+
+          function agesetter() {
+            return setage(age + 1);
+          }
+        return (
+          <HeaderContext.Provider value={{age,setage,agesetter}}{...props}>
+            
+            
+          </HeaderContext.Provider>
+        );
+      };
 
 
-    //   return (
-    //     <>
-    //       <button onClick={() => setAge2(age2 + 1)}>Abhishek's Age+</button>
-    //       <div className="msg"> Piyush's age : {age1}</div>
-    //       <div className="msg">Abhishek's age: {age2}</div>
-    //     </>
-    //   );
-    // };
-
-    // let Greet = () => {
-
-    //   let initialValue=()=>{
-    //     let value=0
-    //     return(value)
-    //   }
-    //   const [age1, setAge1] = React.useState(initialValue);
-    //   const [age2, setAge2] = React.useState(initialValue);
-
-    //   return (
-    //     <>
-    //       <button onClick={() => setAge1(age1 + 1)}>Piyush's Age+</button>
-
-    //       <AgeContext.Provider value={{ age1, age2,setAge2 }}>
-    //         <PrintAge />
-    //       </AgeContext.Provider>
-    //     </>
-    //   );
-    // };
-    // const divElement = <Greet />;
-    // ReactDOM.render(divElement, rootElement);
-
-    // =======================================================================================================================
-    // =======================================================================================================================  
-    const button = false;
-
-    let togleState = ({state,sateState}) => {
-      return (
-        sateState(state ? false : true)
-      )
-    }
-    let ChangeState = () => {
-      const [state, sateState] = React.useState(button);
-
-      return (
-        <button onClick={() => togleState({state,sateState})}>{state.toString()}</button>
-
-      )
-    }
-    let Greet = () => {
-      return (
-        <ChangeState />
-      )
-
-
-    }
-    const divElement = <Greet />;
-    ReactDOM.render(divElement, rootElement);
 
 
 
 
 
+      let Display = () => {
+        const  {age}  = React.useContext(HeaderContext);
+        
+        return <button >{age}</button>;
+      };
 
-  </script>
-</body>
+      function Greet(params) {
+        return (
+          <HeaderContextProvider>
+            <Display />
+          </HeaderContextProvider>
+        );
+      }
 
+      let divElement = <Greet />;
+
+      ReactDOM.render(divElement, rootElement);
+    </script>
+  </body>
 </html>
